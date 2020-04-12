@@ -44,7 +44,6 @@ h1,h2,h3,h4,h5,h6 {
     text-decoration: none;
     border: none;
     display: inline-block;
-    padding: 15px;
     background: rgb(229,83,0);
     box-shadow: 0 0px rgb(225,92,0) inset;
     transition: 0.2s;
@@ -56,7 +55,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 .new:active {
     background: rgb(180, 64, 16);
-    box-shadow: 0 3px rgb(225,92,0) inset;
+    box-shadow: 0 3px rgb(225,92,0);
   }
 
 .box {
@@ -75,13 +74,6 @@ h1,h2,h3,h4,h5,h6 {
     align-items: center;
     text-align: center;
     /*border-style: solid;*/
-}
-
-.box3 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
 }
 
 .container {
@@ -145,9 +137,7 @@ li a:hover {
 
 #touch-menu {
 	display: block;
-	padding: 12px 15px;
 	font-weight: bold;
-	font-size: 14px;
 	color: #fff;
 }
 #touch-menu:hover { 
@@ -161,7 +151,8 @@ li a:hover {
     justify-content: space-around;
 }
 #touch-menu {display: none;}
-@media (max-width: 720px){
+
+@media screen and (max-width: 720px){
     body {padding-top: 60px}
 	header {
 		position: fixed;
@@ -219,8 +210,92 @@ li a:hover {
         text-align: center;
     }
 
+    .first_image {
+        width: 300px;
+        height: 150px;
+    }
+
+    .prize_image1 {
+        width: 100px;
+        height: 50px;
+    }
+
+    .prize_image2 {
+        width: 50px;
+        height: 50px;
+    }
+    h1 {
+        font-size: 100%;
+    }
+    h2{
+        font-size: 100%;
+    }
+    h3 {
+        font-size: 100%;
+    }
+    
+    h4 {
+        font-size: 100%;
+    }
+    h5{
+        font-size: 100%;
+    }
+    h6 {
+        font-size: 100%;
+    }
+
+    .pizza_img {
+        height: 175px;
+        width: 175px;
+    }
+
+    .pizza {
+        grid-template-columns: repeat(auto-fit, 260px);
+    }
+
+    .snack_img {
+        width: 210px;
+        height: 150px;
+    }
+
+    .snack {
+        grid-template-columns: repeat(auto-fit, 250px);
+    }
+
+    .drink_img1 {
+        width: 72px; 
+        height: 200px;
+    }
+
+    .drink_img2 {
+        width: 70px; 
+        height: 200px;
+    }
+
+    .drink_img3 {
+        width: 72px; 
+        height: 240px;
+    }
+
+    .drink {
+        grid-template-columns: repeat(auto-fit, 250px);
+    }
+
+    #touch-menu {
+        font-size: 12px;
+        padding: 12px 15px;
+    }
+
+    .box3 {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-self: center;
+        text-align: start;
+    }
 }
-@media (max-width: 600px){
+
+@media screen and (max-width: 600px){
     body {padding-top: 60px}
 	header {
 		position: fixed;
@@ -277,12 +352,102 @@ li a:hover {
         text-align: center;
     }
 
+    .first_image {
+        width: 200px;
+        height: 100px;
+    }   
+
+    .prize_image1 {
+        width: 150px;
+        height: 75px;
+    }
+
+    .prize_image2 {
+        width: 75px;
+        height: 75px;
+    }
+    .box {
+        display: flex;
+        flex-direction: column;
+        align-content: space-around;
+    }
+
+    .pizza_img {
+        width: 100px;
+        height: 100px;
+    }
+    .pizza {
+        grid-template-columns: repeat(auto-fit, 200px);
+    }
+
+    h1 {
+        font-size: 40%;
+    }
+    h2{
+        font-size: 40%;
+    }
+    h3 {
+        font-size: 40%;
+    }
+    
+    h4 {
+        font-size: 40%;
+    }
+    h5{
+        font-size: 40%;
+    }
+    h6 {
+        font-size: 40%;
+    }
+
+    .snack_img {
+        width: 125px;
+        height: 100px;
+    }
+    .snack {
+        grid-template-columns: repeat(auto-fit, 180px);
+    }
+
+    .new {
+        font-size: 40%;
+        padding: 10px;
+    }
+    .radio-toolbar label {
+        font-size: 40%;
+    }
+
+    .drink_img1 {
+        width: 50px; 
+        height: 150px;
+    }
+
+    .drink_img2 {
+        width: 50px; 
+        height: 150px;
+    }
+
+    .drink_img3 {
+        width: 60px; 
+        height: 200px;
+    }
+
+    .drink {
+        grid-template-columns: repeat(auto-fit, 200px);
+    }
+
+    #touch-menu {
+        font-size: 10px;
+        padding: 10px 12px;
+    }
+    
+    input {
+        font-size: 7px;
+        width:100px
+    }
 }
 input {
-    font-size: 16px;
     padding: 10px;
     display: block;
-    width: 200px;
     border: none;
     border-bottom: 1px solid #ccc;
   }
@@ -336,7 +501,6 @@ input {
       background-color: #ddd;
       padding: 10px 20px;
       font-family: sans-serif, Arial;
-      font-size: 16px;
       border: 2px solid #444;
       border-radius: 15px;
   }
@@ -396,15 +560,166 @@ footer{
     align-content: space-around;
     justify-content: space-around;
 }
+@media screen and (min-width: 720px){
+    .pizza {
+        grid-template-columns: repeat(auto-fit, 400px);
+    }
+    .snack {
+        grid-template-columns: repeat(auto-fit, 450px);
+    }
 
-.pizza {
-    grid-template-columns: repeat(auto-fit, 400px);
+    .drink {
+        grid-template-columns: repeat(auto-fit, 250px);
+    }
+    .radio-toolbar label {
+        font-size: 16px;
+    }
+    #touch-menu {
+        font-size: 14px;
+        padding: 12px 15px;
+    }
+
+    .box3 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    input {
+        font-size: 16px;
+        width: 200px;
+      }
+
 }
 
-.snack {
-    grid-template-columns: repeat(auto-fit, 450px);
+@media screen and (min-width: 480px) {
+    .new {
+        padding: 15px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .prize_image1 {
+        width: 100px;
+        height: 60px;
+    }
+
+    .prize_image2 {
+        width: 60px;
+        height: 60px;
+    }
+
+    .pizza_img {
+        width: 65px;
+        height: 65px;
+    }
+    .pizza {
+        grid-template-columns: repeat(auto-fit, 150px);
+    }
+
+    h1 {
+        font-size: 30%;
+    }
+    h2{
+        font-size: 30%;
+    }
+    h3 {
+        font-size: 30%;
+    }
+
+    h4 {
+        font-size: 30%;
+    }
+    h5{
+        font-size: 30%;
+    }
+    h6 {
+        font-size: 30%;
+    }
+    
+    .snack_img {
+        width: 100px;
+        height: 75px;
+    }
+    .snack {
+        grid-template-columns: repeat(auto-fit, 140px);
+    }
+
+    .new {
+        font-size: 30%;
+    }
+    .radio-toolbar label {
+        font-size: 30%;
+    }
+
+    .new {
+        padding: 5px;
+    }
+
+    .radio-toolbar label {
+        padding:5px 7px;
+    }
+
+    .drink_img1 {
+        width: 42px; 
+        height: 100px;
+    }
+
+    .drink_img2 {
+        width: 45px; 
+        height: 100x;
+    }
+
+    .drink_img3 {
+        width: 50px; 
+        height: 120px;
+    }
+
+    .drink {
+        grid-template-columns: repeat(auto-fit, 125px);
+    }
+
+    #touch-menu {
+        font-size: 10px;
+        padding: 10px 10px;
+    }
+
 }
 
-.drink {
-    grid-template-columns: repeat(auto-fit, 250px);
+@media screen and (max-width: 360px) {
+    .pizza {
+        grid-template-columns: repeat(auto-fit, 110px);
+    }
+    #touch-menu {
+        font-size: 8px;
+        padding: 8px 8px;
+    }
+
+    .snack_img {
+        width: 75px;
+        height: 50px;
+    }
+    .snack {
+        grid-template-columns: repeat(auto-fit, 110px);
+    }
+
+    .drink_img1 {
+        width: 30px; 
+        height: 100px;
+    }
+
+    .drink_img2 {
+        width: 30px; 
+        height: 100px;
+    }
+
+    .drink_img3 {
+        width: 30px; 
+        height: 100px;
+    }
+
+    .drink {
+        grid-template-columns: repeat(auto-fit, 110px);
+    }
 }
+
