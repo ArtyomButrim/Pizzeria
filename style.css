@@ -134,13 +134,155 @@ li a {
 }
 
 li a:hover {
-    background-color: #111;
+    color: #333;
+    background: #f0f0f0;
+}
+
+.logo{
+    height: 50px;
+    width: 50px;
+}
+
+#touch-menu {
+	display: block;
+	padding: 12px 15px;
+	font-weight: bold;
+	font-size: 14px;
+	color: #fff;
+}
+#touch-menu:hover { 
+    color: #333;
+    background: #f0f0f0;
+}
+
+.nav_container {
+    background: rgb(44, 36, 36);
+    display:flex;
+    justify-content: space-around;
+}
+#touch-menu {display: none;}
+@media (max-width: 720px){
+    body {padding-top: 60px}
+	header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+    .disable{
+        display:none;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .logo {
+        height: 30px;
+        width: 30px;
+    }
+
+    .nav {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+        display: none;
+	}
+	.nav li {float: none;}
+	.nav li a {
+		display: block;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+	}
+    .nav li:first-child a {
+        border-top: none;
+    }
+	.nav li a:hover {
+		color: #333;
+		border-left: 3px solid #515572;
+		background: #f0f0f0;
+	}
+	#touch-menu {
+        background: rgb(44, 36, 36);
+		display: flex;
+		float: right;
+        align-content: center;
+        justify-content: center;
+    }
+    .nav_container {
+        background: rgb(44, 36, 36);
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+    }
+
+}
+@media (max-width: 600px){
+    body {padding-top: 60px}
+	header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+    .disable{
+        display:none;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .logo {
+        height: 30px;
+        width: 30px;
+    }
+
+    .nav {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+        display: none;
+	}
+	.nav li {float: none;}
+	.nav li a {
+		display: block;
+        color: white;
+        text-align: center;
+        float : left;
+        text-decoration: none;
+        border: none;
+	}
+	.nav li a:hover {
+		color: #333;
+		border-left: 3px solid #515572;
+		background: #f0f0f0;
+	}
+	#touch-menu {
+        background: rgb(44, 36, 36);
+		display: flex;
+		float: right;
+        align-content: center;
+        justify-content: center;
+    }
+    .nav_container {
+        background: rgb(44, 36, 36);
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+    }
+
 }
 input {
     font-size: 16px;
     padding: 10px;
     display: block;
-    width: 300px;
+    width: 200px;
     border: none;
     border-bottom: 1px solid #ccc;
   }
@@ -153,7 +295,7 @@ input {
 
 }
 .card2 {
-    border: 10px rgb(0, 0, 0)
+    border: 10px rgb(0, 0, 0);
     border-style: solid;
 
 }
