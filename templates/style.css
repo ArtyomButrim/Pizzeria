@@ -1,0 +1,711 @@
+/*Фоны для страниц */
+.html1 {
+    background: url("images/bg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+}
+
+.html2 {
+    background: url("images/salat.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.html3 {
+    background: url("images/flour.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.html4 {
+    background: url("images/water4.jfif");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Шрифт страниц*/
+@font-face {
+    font-family: Pompadur; 
+    src: url(NautilusPompiliusRegular.ttf); 
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: Pompadur;
+}
+
+/* Новый стиль для кнопок*/
+.new {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    border: none;
+    display: inline-block;
+    background: rgb(229,83,0);
+    box-shadow: 0 0px rgb(225,92,0) inset;
+    transition: 0.2s;
+    cursor: pointer;
+    border-radius: 10px;
+} 
+.new:hover { 
+    background: rgb(255,64,35);
+}
+.new:active {
+    background: rgb(180, 64, 16);
+    box-shadow: 0 3px rgb(225,92,0);
+  }
+
+  /* контейнеры */
+.box {
+    display: flex;
+    justify-content: space-around;
+}
+
+.box2 {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    /*border-style: solid;*/
+}
+
+.container {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+.container2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* границы */
+.bord{
+    border: 10px rgb(252, 252, 252);
+    border-style: solid;
+}
+.bord2{
+    border: 10px rgb(0, 0, 0);
+    border-style: solid;
+}
+
+/*Выравнивание*/
+.center1 {
+    display: flex;
+    align-self: center;}
+
+.center2 {
+    display:flex;
+    justify-content: center;
+}
+
+/* Панель навигации*/
+nav {
+    background: rgba(0, 0, 0, 0.781);
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    color: #333;
+    background: #f0f0f0;
+}
+
+#touch-menu {
+	display: block;
+	font-weight: bold;
+	color: #fff;
+}
+#touch-menu:hover { 
+    color: #333;
+    background: #f0f0f0;
+}
+
+.nav_container {
+    background: rgb(44, 36, 36);
+    display:flex;
+    justify-content: space-around;
+}
+#touch-menu {display: none;}
+
+/* Изменения для разрешения с шириной меньшей 720px*/
+@media screen and (max-width: 720px){
+    
+    /*Изменения для навигационной панели*/
+    
+    body {padding-top: 60px}
+	header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+    .disable{
+        display:none;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .nav {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+        display: none;
+	}
+	.nav li {float: none;}
+	.nav li a {
+		display: block;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+	}
+    .nav li:first-child a {
+        border-top: none;
+    }
+	.nav li a:hover {
+		color: #333;
+		border-left: 3px solid #515572;
+		background: #f0f0f0;
+	}
+	#touch-menu {
+        background: rgb(44, 36, 36);
+		display: flex;
+		float: right;
+        align-content: center;
+        justify-content: center;
+    }
+    .nav_container {
+        background: rgb(44, 36, 36);
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+    }
+
+    /* картинки на главной странице*/
+    .first_image {
+        width: 300px;
+        height: 150px;
+    }
+
+    .prize_image1 {
+        width: 100px;
+        height: 50px;
+    }
+
+    .prize_image2 {
+        width: 50px;
+        height: 50px;
+    }
+
+    /*Размер шрифта*/
+    h1 {
+        font-size: 100%;
+    }
+    h2{
+        font-size: 100%;
+    }
+    h3 {
+        font-size: 100%;
+    }
+    
+    h4 {
+        font-size: 100%;
+    }
+    h5{
+        font-size: 100%;
+    }
+    h6 {
+        font-size: 100%;
+    }
+
+    /*Картинки пицц*/
+    .pizza_img {
+        height: 175px;
+        width: 175px;
+    }
+
+    /*Ширина grid*/
+    .pizza {
+        grid-template-columns: repeat(auto-fit, 260px);
+    }
+    /*Картинка закусок*/
+    .snack_img {
+        width: 210px;
+        height: 150px;
+    }
+
+    /*Ширина grid*/
+    .snack {
+        grid-template-columns: repeat(auto-fit, 250px);
+    }
+    /*Картинки напитков*/
+    .drink_img1 {
+        width: 72px; 
+        height: 200px;
+    }
+
+    .drink_img2 {
+        width: 70px; 
+        height: 200px;
+    }
+
+    .drink_img3 {
+        width: 72px; 
+        height: 240px;
+    }
+
+    /*Ширина grid*/
+    .drink {
+        grid-template-columns: repeat(auto-fit, 250px);
+    }
+    /*Кнопка меню*/
+    #touch-menu {
+        font-size: 12px;
+        padding: 12px 15px;
+    }
+
+    /*контейнер*/
+    .box3 {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-self: center;
+        text-align: start;
+    }
+}
+
+/* изменения для ширины <= 600зч*/
+@media screen and (max-width: 600px){
+    .nav li a {
+        float : left;
+	}
+	.nav li a:hover {
+		color: #333;
+		border-left: 3px solid #515572;
+		background: #f0f0f0;
+	}
+
+    .first_image {
+        width: 200px;
+        height: 100px;
+    }   
+
+    .prize_image1 {
+        width: 150px;
+        height: 75px;
+    }
+
+    .prize_image2 {
+        width: 75px;
+        height: 75px;
+    }
+    .box {
+        display: flex;
+        flex-direction: column;
+        align-content: space-around;
+    }
+
+    .pizza_img {
+        width: 100px;
+        height: 100px;
+    }
+    .pizza {
+        grid-template-columns: repeat(auto-fit, 200px);
+    }
+
+    h1 {
+        font-size: 40%;
+    }
+    h2{
+        font-size: 40%;
+    }
+    h3 {
+        font-size: 40%;
+    }
+    
+    h4 {
+        font-size: 40%;
+    }
+    h5{
+        font-size: 40%;
+    }
+    h6 {
+        font-size: 40%;
+    }
+
+    .snack_img {
+        width: 125px;
+        height: 100px;
+    }
+    .snack {
+        grid-template-columns: repeat(auto-fit, 180px);
+    }
+
+    .new {
+        font-size: 40%;
+        padding: 10px;
+    }
+    .radio-toolbar label {
+        font-size: 40%;
+    }
+
+    .drink_img1 {
+        width: 50px; 
+        height: 150px;
+    }
+
+    .drink_img2 {
+        width: 50px; 
+        height: 150px;
+    }
+
+    .drink_img3 {
+        width: 60px; 
+        height: 200px;
+    }
+
+    .drink {
+        grid-template-columns: repeat(auto-fit, 200px);
+    }
+
+    #touch-menu {
+        font-size: 10px;
+        padding: 10px 12px;
+    }
+    
+    /*поля ввода*/
+    input {
+        font-size: 7px;
+        width:100px
+    }
+}
+
+/* Стиль для полей ввода*/
+input {
+    padding: 10px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #ccc;
+  }
+input:focus {
+    outline: none;
+  }
+
+/*границы контейнеров*/
+.card {
+    border: 10px rgb(252, 252, 252);
+    border-style: solid;
+
+}
+.card2 {
+    border: 10px rgb(0, 0, 0);
+    border-style: solid;
+
+}
+
+/* фоновая картинка*/
+.img_for_back {
+    background-image: url(images/flour.jpg);
+    background-color: #464646;
+}
+
+/*фоновые цвета*/
+.white_background{
+    background-color: rgb(187, 183, 183);
+}
+
+.white_background2{
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+.white_background3{
+    padding: 10px;
+    background-color: rgba(185, 180, 180, 0.884);
+}
+.black_background{
+    padding: 10px;
+    background-color: rgba(37, 37, 37, 0.836);
+}
+
+/*Стиль для кнопок выбора*/
+.radio-toolbar {
+    margin: 10px;
+}
+  
+.radio-toolbar input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+  
+.radio-toolbar label {
+    display: inline-block;
+    background-color: #ddd;
+    padding: 10px 20px;
+    font-family: sans-serif, Arial;
+    border: 2px solid #444;
+    border-radius: 15px;
+}
+  
+.radio-toolbar label:hover {
+    background-color: rgb(253, 255, 221);
+}
+  
+.radio-toolbar input[type="radio"]:focus + label {
+  border: 2px dashed rgb(212, 209, 14);
+}
+  
+.radio-toolbar input[type="radio"]:checked + label {
+    background-color: rgb(243, 147, 78);
+    border-color: rgb(231, 157, 18);
+}
+
+/*Стили для текста*/
+.orange {
+    color: white;
+    padding: 8px;
+    font-family: Arial;
+    background-color: #ff9800;
+}
+
+.orange2 {
+    color: white;
+    padding: 10px;
+    background-color: #ff9800;
+}
+
+.orange3 {
+    color: rgb(102, 99, 99);
+    padding: 0px;
+    font-family: Arial;
+    border-radius: 50%;
+}
+
+.white_text{
+    color: rgb(252, 252, 252);
+}
+
+.black-text{
+    color: rgba(0, 0, 0);
+}
+
+/* Тег main*/
+main{
+    background: rgba(0, 0, 0, 0.644);
+    padding:5px;
+}
+
+/*Тег footer*/
+footer{
+    background: rgba(0, 0, 0, 0.644);
+ }
+
+ /* Очередной контейнер*/
+.main_container {
+    display: grid;
+    grid-gap: 50px;
+    align-content: space-around;
+    justify-content: space-around;
+}
+/* >= 720px*/
+@media screen and (min-width: 720px){
+    .pizza {
+        grid-template-columns: repeat(auto-fit, 400px);
+    }
+    .snack {
+        grid-template-columns: repeat(auto-fit, 450px);
+    }
+
+    .drink {
+        grid-template-columns: repeat(auto-fit, 250px);
+    }
+    .radio-toolbar label {
+        font-size: 16px;
+    }
+    #touch-menu {
+        font-size: 14px;
+        padding: 12px 15px;
+    }
+
+    .box3 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    input {
+        font-size: 16px;
+        width: 200px;
+      }
+
+}
+
+/* >= 480px*/
+@media screen and (min-width: 480px) {
+    .new {
+        padding: 15px;
+    }
+}
+
+/* <= 480px*/
+@media screen and (max-width: 480px) {
+    .prize_image1 {
+        width: 100px;
+        height: 60px;
+    }
+
+    .prize_image2 {
+        width: 60px;
+        height: 60px;
+    }
+
+    .pizza_img {
+        width: 65px;
+        height: 65px;
+    }
+    .pizza {
+        grid-template-columns: repeat(auto-fit, 150px);
+    }
+
+    h1 {
+        font-size: 30%;
+    }
+    h2{
+        font-size: 30%;
+    }
+    h3 {
+        font-size: 30%;
+    }
+
+    h4 {
+        font-size: 30%;
+    }
+    h5{
+        font-size: 30%;
+    }
+    h6 {
+        font-size: 30%;
+    }
+    
+    .snack_img {
+        width: 100px;
+        height: 75px;
+    }
+    .snack {
+        grid-template-columns: repeat(auto-fit, 140px);
+    }
+
+    .new {
+        font-size: 30%;
+    }
+    .radio-toolbar label {
+        font-size: 30%;
+    }
+
+    .new {
+        padding: 5px;
+    }
+
+    .radio-toolbar label {
+        padding:5px 7px;
+    }
+
+    .drink_img1 {
+        width: 42px; 
+        height: 100px;
+    }
+
+    .drink_img2 {
+        width: 45px; 
+        height: 100x;
+    }
+
+    .drink_img3 {
+        width: 50px; 
+        height: 120px;
+    }
+
+    .drink {
+        grid-template-columns: repeat(auto-fit, 125px);
+    }
+
+    #touch-menu {
+        font-size: 10px;
+        padding: 10px 10px;
+    }
+
+}
+
+/* <=360px*/
+@media screen and (max-width: 360px) {
+    .pizza {
+        grid-template-columns: repeat(auto-fit, 110px);
+    }
+    #touch-menu {
+        font-size: 8px;
+        padding: 8px 8px;
+    }
+
+    .snack_img {
+        width: 75px;
+        height: 50px;
+    }
+    .snack {
+        grid-template-columns: repeat(auto-fit, 110px);
+    }
+
+    .drink_img1 {
+        width: 30px; 
+        height: 100px;
+    }
+
+    .drink_img2 {
+        width: 30px; 
+        height: 100px;
+    }
+
+    .drink_img3 {
+        width: 30px; 
+        height: 100px;
+    }
+
+    .drink {
+        grid-template-columns: repeat(auto-fit, 110px);
+    }
+}
+
