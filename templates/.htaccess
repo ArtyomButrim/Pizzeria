@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteBase /
+ErrorDocument 404 /errors/404.html
+ErrorDocument 403 /errors/403.html
+
+<Files "test[0-9].*">  
+  Require all denied
+</Files>

@@ -1,0 +1,94 @@
+{% extends "base/base.html" %}
+
+{% block title %}
+	Корзина
+{% endblock %}
+
+{% block classes %}
+	html3
+{% endblock%}
+
+{% block main_content %}
+ <div class="white_text">
+	<div>
+		<h1 align="center">ДОСТАВКА И ОПЛАТА</h1>
+	</div>
+	<div>
+		<h2 align= "center">
+			Не зависимо от того, какой сейчас час, какая погода и как далеко вы 
+			<br>
+			живете - наша оперативная доставка с радостью привезёт вам заказ 
+		`   <br>
+			в любое место и по любому адресу г.Минск
+		</h2>
+	</div>
+</div>
+<div  class="white_background2" >
+	<div>
+		<h2 align="center">АДРЕС И ВРЕМЯ ДОСТАВКИ</h2>
+	</div>
+	<div>
+		<h3 align="center">
+			Пожалуйста, выберите удобную дату и время доставки, введите ваш 
+			<br>
+			полный адрес и телефон, чтобы мы могли убедиться в том, что ваш заказ
+			<br>
+			нашел вас:
+		</h3>
+	</div>
+	<div class="box2">
+		<div class="box3">
+			<div class="white_background3">
+				<fieldset>
+				    {% for label in label %}
+					<div class="box3">
+						<div>
+							<form>
+								<h2><b>{{label.firstLabelName}}</b><br>
+									<input type="{{label.firstLabelType}}" maxlength="{{label.maxLength}}">
+								</h2>
+							</form>
+						</div>
+						<div>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						</div>
+						<div>
+							<form>
+								<h2><b>{{label.secondLabelName}}</b><br>
+									<input type="{{label.secondLabelType}}">  
+								</h2>
+							</form>
+						</div>
+					</div>
+					{% endfor %}
+					{% for input in input %}
+					<div class="box3">
+						<form>
+							<h2><b>{{input.labelName}}</b><br>
+								<input type="{{input.labelType}}" maxlength="{{input.maxLength}}">  
+							</h2>
+						</form>
+					</div>
+					{% endfor %}
+					<div class="box3">
+						<form>
+							<h2><b>Комментарий к заказу:</b><br>
+								<textarea name="comment"></textarea> 
+							</h2>
+						</form>  
+					</div>
+				</fieldset>
+			</div>
+			<div class="black_background">
+				<fieldset>
+					<div class = "box2">
+					<h2>Ваш заказ</h2>
+						<p><button type="button" class="new">Отправить</button>
+						<button type="button" class="new">Очистить</button></p>
+					</div>
+				</fieldset>
+			</div> 
+		</div>
+	</div> 
+</div>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "base/base.html" %}
+
+{% block title %}
+	Пиццерия
+{% endblock %}
+
+{% block classes %}
+	html1
+{% endblock%}
+
+{% block main_content %}
+<div>
+	<h2 align = "center" class="white_text">
+		Выберите желаемую пиццу
+	</h2>>    
+</div>
+<div class="main_container pizza pizza2">
+	{% for pizza in pizza %}
+	<div class="container card">
+		<div class="img_for_back">
+			<div>
+				<img src="{{pizza.imgURL}}" width="250" height="250" class="pizza_img">
+			</div>
+			<div class="radio-toolbar">
+				<input type="radio" id="radio26{{pizza.number}}" name="radioSize{{pizza.number}}" value="26" checked>
+				<label for="radio26{{pizza.number}}">26 см</label>
+			
+				<input type="radio" id="radio32{{pizza.number}}" name="radioSize{{pizza.number}}" value="32">
+				<label for="radio32{{pizza.number}}">32 см</label> 
+			</div>
+			<div class = "orange">
+				<h2>{{pizza.price}}</h2>
+			</div>
+		</div>
+		<div class = "white_background">
+			<div>
+				<h2>{{pizza.name}}</h2>
+			</div>
+			<hr>
+			<div>
+				<h4>
+					{{pizza.pizzaInfo}}
+				</h4>
+			</div>   
+			<div>
+				<h3>Состав:</h3>
+				<h3>{{pizza.ingredients}}</h3>
+			</div> 
+			<div>
+				<div>
+					<p>
+						<button type="button" class="new">
+							Добавить в корзину
+						</button>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "base/base.html" %}
+
+{% block title %}
+	Пиццерия
+{% endblock %}
+
+{% block classes %}
+	html1
+{% endblock%}
+{% block main_content %}
+	<div class="box2">
+		<div class="box2 white_background2">
+			<fieldset>
+			<div>
+				<h1 align = "center">Добро пожаловать в пиццерию "Браво"</h1>
+			</div>
+			<div class = "box2">
+				{% for info in informations %}
+				<div class=" box2">
+					<h2>{{info.first_info}}</h2>
+					<h2>{{info.second_info}}</h2>
+					<img src="{{info.img_url}}" width="600" height="300" class="first_image">
+				</div>
+				{% endfor %}
+			</div>
+		</fieldset>
+		</div>
+		<div class="white_background3 box">
+			<fieldset >
+				<h2 align="center">Специальные предложения</h2>
+				<div class="box">
+					{% for specialOffer in special_offers %}
+					<div class="container bord white_background2">
+						<div>
+							<img src="{{specialOffer.img_url}}" width="{{specialOffer.img_width}}" height="{{specialOffer.img_height}}" class="{{specialOffer.class}}">
+						</div>
+						<div>
+							<h2>{{specialOffer.name}}</h2>
+							<hr>
+							<h3>{{specialOffer.info}}</h3>
+						</div>
+					</div>
+					<div>
+						&nbsp;
+					</div>
+					{% endfor %}
+				</div>
+			</fieldset>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "base/base.html" %}
+
+{% block title %}
+	Напитки
+{% endblock %}
+
+{% block classes %}
+	html4
+{% endblock%}
+
+{% block main_content %}
+<div>
+	<div class="white_text">
+		<h2 align = "center">
+		Выбрать напитки
+		</h2>  
+	</div>
+	<div class="white_text">
+		<h3 align = "center">
+			Что может быть лучше освежающего газированного напитка в
+			<br>
+			дополнение к горячей ароматной пицце.
+		</h3>    
+	</div>  
+	<div class="main_container drink">
+		{% for drink in drinks %}
+		<div class="container bord white_background2">
+			<div class="img_for_back">
+				<img src="{{drink.imgURL}}"  width="{{drink.imgWidth}}" height="{{imgHeight}}" class="{{drink.class}}">
+			</div>
+			<div>
+				<h2>{{drink.name}}, {{drink.capacity}}</h2>
+			</div>
+			<div class="orange3">
+				<h2>{{drink.price}}</h2>
+			</div> 
+			<div>
+				<form>
+					<p>
+						<button type="button" class="new">
+							Добавить в корзину
+						</button>
+					</p>
+				</form>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>>
+{% endblock %}

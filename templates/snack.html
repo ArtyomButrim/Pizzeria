@@ -1,0 +1,62 @@
+{% extends "base/base.html" %}
+
+{% block title %}
+	Закуски
+{% endblock %}
+
+{% block classes %}
+	html2
+{% endblock%}
+
+{% block main_content %}
+<div class="white_text">
+	<div>
+		<h2 align = "center">
+			Выбрать закуски
+		</h2>    
+	</div>
+	<div>
+		<h3 align = "center">
+			Не забуь выбрать свежие закуски  и салаты от нашего шев-повара,
+			<br>
+			которые гармонично дополнят ваше меню сегодня.
+		</h3>    
+	</div>    
+</div>
+<div class="main_container snack">
+	{% for snack in snacks %}
+	<div class="container white_background2 bord2">
+		<div>
+			<div>
+				<img src="{{snack.imgURL}}" width="405" height="250" class="snack_img">
+			</div>
+			<div class="orange2">
+				<h2>{{ snack.price }}<br>{{ snack.weight }}</h2>
+			</div>
+		</div>
+		<div>
+			<h2>{{snack.name}}</h2>
+		</div>
+		<div>
+			<h3>
+				{{snack.info}}
+			</h3>
+		</div>
+		<hr>   
+		<div>
+			<h3>Состав:<br>{{snack.ingredients}}</h3>
+		</div>
+		<div>
+			<form>
+				<p>
+					<button type="button" class="new">
+						Добавить в корзину
+					</button>
+				</p>
+			</form>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{% endblock %}
+
