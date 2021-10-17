@@ -4,6 +4,10 @@
 	Закуски
 {% endblock %}
 
+{% block header %}
+    {% include 'base/header.html' with {'result': code} %}
+{% endblock %}
+
 {% block classes %}
 	html2
 {% endblock%}
@@ -31,7 +35,7 @@
 				<img src="{{snack.imgURL}}" width="405" height="250" class="snack_img">
 			</div>
 			<div class="orange2">
-				<h2>{{ snack.price }}<br>{{ snack.weight }}</h2>
+				<h2>{{ snack.price }} руб.<br>{{ snack.weight }} г.</h2>
 			</div>
 		</div>
 		<div>
@@ -47,9 +51,9 @@
 			<h3>Состав:<br>{{snack.ingredients}}</h3>
 		</div>
 		<div>
-			<form>
+			<form method="POST" action = "snack.php">
 				<p>
-					<button type="button" class="new">
+					<button type="submit" class="new" name= "add_snack_to_basket" value="{{snack.id}}">
 						Добавить в корзину
 					</button>
 				</p>

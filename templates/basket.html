@@ -4,6 +4,10 @@
 	Корзина
 {% endblock %}
 
+{% block header %}
+    {% include 'base/header.html' with {'result': code} %}
+{% endblock %}
+
 {% block classes %}
 	html3
 {% endblock%}
@@ -38,44 +42,36 @@
 	</div>
 	<div class="box2">
 		<div class="box3">
+			<form method="post" action = "basket.php">
 			<div class="white_background3">
 				<fieldset>
 				    {% for label in label %}
 					<div class="box3">
 						<div>
-							<form>
-								<h2><b>{{label.firstLabelName}}</b><br>
-									<input type="{{label.firstLabelType}}" maxlength="{{label.maxLength}}">
-								</h2>
-							</form>
+							<h2><b>{{label.firstLabelName}}</b><br>
+								<input type="{{label.firstLabelType}}" name = "{{label.secondName}}" maxlength="{{label.maxLength}}">
+							</h2>
 						</div>
 						<div>
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						</div>
 						<div>
-							<form>
-								<h2><b>{{label.secondLabelName}}</b><br>
-									<input type="{{label.secondLabelType}}">  
-								</h2>
-							</form>
+							<h2><b>{{label.secondLabelName}}</b><br>
+								<input type="{{label.secondLabelType}}" name = "{{label.name}}">  
+							</h2>
 						</div>
 					</div>
 					{% endfor %}
 					{% for input in input %}
 					<div class="box3">
-						<form>
 							<h2><b>{{input.labelName}}</b><br>
-								<input type="{{input.labelType}}" maxlength="{{input.maxLength}}">  
-							</h2>
-						</form>
+								<input type="{{input.labelType}}" name="{{input.name}}" maxlength="{{input.maxLength}}">  
 					</div>
 					{% endfor %}
 					<div class="box3">
-						<form>
 							<h2><b>Комментарий к заказу:</b><br>
 								<textarea name="comment"></textarea> 
-							</h2>
-						</form>  
+							</h2> 
 					</div>
 				</fieldset>
 			</div>
@@ -83,11 +79,60 @@
 				<fieldset>
 					<div class = "box2">
 					<h2>Ваш заказ</h2>
-						<p><button type="button" class="new">Отправить</button>
-						<button type="button" class="new">Очистить</button></p>
+						<div>
+							<table>
+			                    <thead>
+			                        <tr>
+			                            <td>Наименование</td>
+			                            <td>-</td>
+			                            <td>Количество</td>
+			                            <td>+</td>
+			                            <td>Цена</td>
+			                            <td>Удалить</td>
+			                        </tr>
+			                    <thead>
+			                    <tbody>
+			                        {% for pizza in pizza %}
+			                        <tr>
+			                            <td>{{pizza.name}}</td>
+		                             	<td><button type="submit" name="delete_one_pizza" class="new" value="{{pizza.id}}">-</button></td>
+		                            	<td>{{pizza.count}}</td>
+		                             	<td><button type="submit" name="add_one_pizza" class="new" value="{{pizza.id}}">+</button></td>
+		                            	<td>{{pizza.price}} руб.</td>
+		                            	<td><button type="submit" name="delete_pizza" class="new" value="{{pizza.id}}">Убрать</button></td>
+			                        </tr>
+			                        {% endfor %}
+			                        {% for snack in snack %}
+			                        <tr>
+			                            <td>{{snack.name}}</td>
+			                            <td><button type="submit" name="delete_one_snack" class="new" value="{{snack.id}}">-</button></td>
+			                            <td>{{snack.count}}</td>
+			                            <td><button type="submit" name="add_one_snack" class="new" value="{{snack.id}}">+</button></td>
+			                            <td>{{snack.price}} руб.</td>
+			                            <td><button type="submit" name="delete_snack" class="new" value="{{snack.id}}">Убрать</button></td>
+			                        </tr>
+			                        {% endfor %}
+			                        {% for drink in drink %}
+			                        <tr>
+			                            <td>{{drink.name}}</td>
+			                            <td><button type="submit" name="delete_one_drink" class="new" value="{{drink.id}}">-</button></td>
+			                            <td>{{drink.count}}</td>
+			                            <td><button type="submit" name="add_one_drink" class="new" value="{{drink.id}}">+</button></td>
+			                            <td>{{drink.price}} руб.</td>
+			                            <td><button type="submit" name="delete_drink" class="new" value="{{drink.id}}">Убрать</button></td>
+			                        </tr>
+			                        {% endfor %}
+			                    </tbody>
+			                </table>
+			                <h2>Итоговая стоимость: {{price}}руб.</h2>
+
+						</div>
+						<p><button type="submit" name="letsgo" class="new">Заказать</button>
+						<button type="submit" name="delete_all_order" class="new">Очистить</button></p>
 					</div>
 				</fieldset>
 			</div> 
+			</form>
 		</div>
 	</div> 
 </div>

@@ -1,5 +1,7 @@
 <?php
 require_once 'vendor/autoload.php';
+require_once 'DataBase/dataBase.php';
+require_once 'DataBase/extend.php';
 
 $loader = new Twig_Loader_Filesystem("templates");
 
@@ -8,55 +10,55 @@ $options  = array(
 		'auto_reload' => true
 );
 
-$drinks = array(
-	array(
-		'imgURL' => 'images/cocacola.png',
-		'price' => '2 руб.',
-		'name' => 'Кока-Кола',
-		'capacity' => '1,5 л.',
-		'class' => 'drink_img1',
-		'imgWidth' => '123',
-		'imgHeight' => '300'
-	),
-	array(
-		'imgURL' => 'images/schweppes2.png',
-		'price' => '2 руб.',
-		'info' => 'Лучшее дополненеи к любому столу из свежих овощей.',
-		'name' => 'Швепс',
-		'capacity' => '1,5 л.',
-		'imgWidth' => '90',
-		'imgHeight' => '300',
-		'class' => 'drink_img2'
-	),
-	array(
-		'imgURL' => 'images/sprite.png',
-		'price' => '2 руб.',
-		'name' => 'Спрайт',
-		'capacity' => '1,5 л.',
-		'class' => 'drink_img3',
-		'imgWidth' => '109',
-		'imgHeight' => '350'
-	),
-	array(
-		'imgURL' => 'images/fanta.png',
-		'price' => '2 руб.',
-		'name' => 'Фанта',
-		'capacity' => '1,5 л.',
-		'class' => 'drink_img2',
-		'imgWidth' => '90',
-		'imgHeight' => '300'
-	),
-	array(
-		'imgURL' => 'images/pepsi.png',
-		'price' => '2 руб.',
-		'name' => 'Пепси-Кола',
-		'capacity' => '1,5 л.',
-		'class' => 'drink_img2',
-		'imgWidth' => '90',
-		'imgHeight' => '300'
-	)
-);
-	
+if (isset($_SESSION['id']))
+{
+	$result['code']=1;
+}
+else
+{
+	$result['code']=0;
+}
+
+if (isset($_POST['add_drink_to_basket']))
+{
+
+	if(isset($_SESSION['id']))
+	{
+		$basket_data = new DataBase(NULL);
+		
+		if ($basket_data->getDrinkBasketInfoByIdAndUserID($_POST['add_drink_to_basket'], $_SESSION['id'],'basket_drink') == false)
+		{
+			$basketData = array(
+				'id_user'=> $_SESSION['id'],
+				'id_drink' => $_POST['add_drink_to_basket'],
+				'count' => 1
+			);
+
+			$basket_data->insertBasketDrink($basketData);
+		}
+		else
+		{
+			$Info = $basket_data->getDrinkBasketInfoByIdAndUserID($_POST['add_drink_to_basket'], $_SESSION['id'],'basket_drink');
+			$newData=[
+				'id'=>$Info['id'],
+				'count_2'=> $Info['count']+1,
+				'id_user' => $Info['id_user'],
+				'id_drink' => $Info['id_drink']
+			];
+			$basket_data->UpdateBasketDrink($newData);
+		}
+	}
+	else
+	{
+		alert('Воспользоваться корзиной могут только авторизованный пользователи!');
+	}
+}
+$db_drinks = new DataBase(NULL);
+
+$drinks= $db_drinks->getInfo('drinks'); 
+
 $twig = new Twig_Environment($loader, $options);
 
-echo $twig->render('drink.html', array('drinks' => $drinks));
+$result['drinks'] = $drinks;
+
+echo $twig->render('drink.html', $result);

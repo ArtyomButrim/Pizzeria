@@ -4,6 +4,10 @@
 	Напитки
 {% endblock %}
 
+{% block header %}
+    {% include 'base/header.html' with {'result': code} %}
+{% endblock %}
+
 {% block classes %}
 	html4
 {% endblock%}
@@ -29,15 +33,15 @@
 				<img src="{{drink.imgURL}}"  width="{{drink.imgWidth}}" height="{{imgHeight}}" class="{{drink.class}}">
 			</div>
 			<div>
-				<h2>{{drink.name}}, {{drink.capacity}}</h2>
+				<h2>{{drink.name}}, {{drink.capacity}} л.</h2>
 			</div>
 			<div class="orange3">
-				<h2>{{drink.price}}</h2>
+				<h2>{{drink.price}} руб.</h2>
 			</div> 
 			<div>
-				<form>
+				<form method= "POST" action="drink.php">
 					<p>
-						<button type="button" class="new">
+						<button type="submit" class="new" name= "add_drink_to_basket" value="{{drink.id}}">
 							Добавить в корзину
 						</button>
 					</p>

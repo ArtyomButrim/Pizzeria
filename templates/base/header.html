@@ -1,0 +1,11 @@
+{% if code == 1 %}
+	<li><a href = "basket.php" >Корзина</a></li>
+    <li><a href = "logout.php" >Выйти</a></li>
+{% elseif code == 0 %}
+    <li ><a href = "login.php">Войти</a></li>
+    <li><a href = "singup.php">Зарегистрироваться</a></li>
+{% elseif code ==  2 %}
+    <li ><a href = "login.php">Войти</a></li>
+{% else %}
+    <li ><a href = "singup.php">Зарегистрироваться</a></li>
+{% endif %}

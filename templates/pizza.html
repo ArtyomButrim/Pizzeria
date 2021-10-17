@@ -4,6 +4,10 @@
 	Пиццерия
 {% endblock %}
 
+{% block header %}
+    {% include 'base/header.html' with {'result': code} %}
+{% endblock %}
+
 {% block classes %}
 	html1
 {% endblock%}
@@ -29,7 +33,7 @@
 				<label for="radio32{{pizza.number}}">32 см</label> 
 			</div>
 			<div class = "orange">
-				<h2>{{pizza.price}}</h2>
+				<h2>{{pizza.price}} руб.</h2>
 			</div>
 		</div>
 		<div class = "white_background">
@@ -48,11 +52,13 @@
 			</div> 
 			<div>
 				<div>
+					<form method="POST" action="pizza.php">
 					<p>
-						<button type="button" class="new">
+						<button type="submit" name='add_pizza_to_basket' class="new" value = "{{pizza.id}}">
 							Добавить в корзину
 						</button>
 					</p>
+					</form>
 				</div>
 			</div>
 		</div>

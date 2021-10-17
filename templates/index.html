@@ -4,6 +4,10 @@
 	Пиццерия
 {% endblock %}
 
+{% block header %}
+    {% include 'base/header.html' with {'result': code} %}
+{% endblock %}
+
 {% block classes %}
 	html1
 {% endblock%}
@@ -32,7 +36,7 @@
 					{% for specialOffer in special_offers %}
 					<div class="container bord white_background2">
 						<div>
-							<img src="{{specialOffer.img_url}}" width="{{specialOffer.img_width}}" height="{{specialOffer.img_height}}" class="{{specialOffer.class}}">
+							<img src="{{specialOffer.imgURL}}" width="{{specialOffer.imgWidth}}" height="{{specialOffer.imgHeight}}" class="{{specialOffer.class}}">
 						</div>
 						<div>
 							<h2>{{specialOffer.name}}</h2>

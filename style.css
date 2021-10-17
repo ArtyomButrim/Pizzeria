@@ -72,8 +72,8 @@ h1,h2,h3,h4,h5,h6 {
 .box2 {
     display:flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
+    /align-items: center;
     text-align: center;
     /*border-style: solid;*/
 }
@@ -709,3 +709,54 @@ footer{
     }
 }
 
+
+textarea {
+    width: 90%; /* Ширина поля в процентах */
+    height: 90px; /* Высота поля в пикселах */
+    resize: none; /* Запрещаем изменять размер */
+   } 
+
+table {
+border-spacing: 0;
+empty-cells: hide;
+}
+td {
+padding: 10px 20px;
+text-align: center;
+border-bottom: 1px solid #F4EEE8;
+transition: all 0.5s linear;
+}
+td:first-child {
+text-align: left;
+color: #3D3511;
+font-weight: bold;
+}
+th {
+padding: 10px 20px;
+color: #3D3511;
+border-bottom: 1px solid #F4EEE8;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+}
+td:nth-child(even) {
+background: #F6D27E;
+}
+td:nth-child(odd) {
+background: #D1C7BF;
+}
+th:nth-child(even)  {
+background: #F6D27E;
+}
+th:nth-child(odd)  {
+background: #D1C7BF;
+}
+.round-top {
+border-top-left-radius: 5px;
+}
+.round-bottom {
+border-bottom-left-radius: 5px;
+}
+tr:hover td{
+background: #D1C7BF;
+font-weight: bold;
+}

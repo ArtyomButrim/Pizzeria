@@ -1,0 +1,63 @@
+{% extends "base/base.html" %}
+
+{% block title %}
+	Тест
+{% endblock %}
+
+{% block classes %}
+	html3
+{% endblock%}
+{% block main_content %}
+<div class="white_text">
+    <div>
+        <h1 align="center">ДОСТАВКА И ОПЛАТА</h1>
+    </div>
+    <div>
+        &nbsp;
+    </div>
+    <div>
+        <h2 align= "center">
+            Не зависимо от того, какой сейчас час, какая погода и как далеко вы 
+            <br>
+            живете - наша оперативная доставка с радостью привезёт вам заказ 
+        `   <br>
+            в любое место и по любому адресу г.Минск
+        </h2>
+    </div>
+    <div>
+        &nbsp;
+    </div>
+</div>
+<div  class="white_background2" >
+    <div>
+        <h2 align="center">АДРЕС И ВРЕМЯ ДОСТАВКИ</h2>
+    </div>
+    <div>
+        &nbsp;
+    </div>
+    <div>
+        <h3 align="center">
+            Пожалуйста, выберите удобную дату и время доставки, введите ваш 
+            <br>
+            полный адрес и телефон, чтобы мы могли убедиться в том, что ваш заказ
+            <br>
+            нашел вас:
+        </h3>
+    </div>
+    <div class="box2">
+        <div class="box3">
+            <div class="white_background3">
+                <div class="box3">
+                    <form method="post" action="test.php">
+                        <div>
+                            <h2><b>Ваш номер:</b><br>
+                                <input type="text" name= "number">  
+                            </h2>
+                        </div>
+                    <input type="submit" name="letsgo" class="new" value = "Заказать">
+                </div>
+            </div> 
+        </div>
+    </div> 
+</div>
+{% endblock %}

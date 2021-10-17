@@ -1,5 +1,6 @@
 <?php
 require_once 'vendor/autoload.php';
+require_once 'DataBase/dataBase.php';
 
 $loader = new Twig_Loader_Filesystem("templates");
 
@@ -8,30 +9,19 @@ $options  = array(
 		'auto_reload' => true
 );
 
-$special_offers = array(
-	array(
-		'name' => 'Каждая 10-я пицца бесплатно', 
-		'img_url' => 'images/prize.png', 
-		'info' => 'Пицца из печи', 
-		'img_width' => '200','img_height' => '100',
-		'class' => 'prize_image1'
-	),
-	array(
-		'name' => 'Сертификат на пиццу', 
-		'img_url' => 'images/win.jpg', 
-		'info' => 'Пицца Двойная Пепперони',
-		'img_width' => '100','img_height' => '100', 
-		'class' => 'prize_image2'
-	),
-	array(
-		'name' => 'Акция апреля', 
-		'img_url' => 'images/drink.jpg', 
-		'info' => 'Напиток при заказе пиццы в подарок!', 
-		'img_width' => '200','img_height' => '100', 
-		'class' => 'prize_image1'
-	)
-);
-	
+$db_specialOffers = new DataBase(NULL);
+
+if (isset($_SESSION['id']))
+{
+	$result['code']=1;
+}
+else
+{
+	$result['code']=0;
+}
+
+$special_offers= $db_specialOffers->getInfo('special_offers'); 
+
 $informations = array(
 	array(
 		'first_info' => 'Пиццу мы выпекаем по традиционным итальянским технологиям - в настоящей печи на дровах!',
