@@ -247,8 +247,8 @@ if (isset($_POST['letsgo'])) {
                     $mail->SMTPAuth = true;
 
                     $mail->Host = 'smtp.gmail.com';
-                    $mail->Username = 'pizzeria.bravo.2020@gmail.com';
-                    $mail->Password = '1133779924568i';
+                    $mail->Username = '';
+                    $mail->Password = '';
                     $mail->SMTPSecure = 'ssl';
                     $mail->Port = 465;
                     $mail->setFrom('pizzeria.bravo.2020@gmail.com', 'Пиццерия Браво');
